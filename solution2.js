@@ -1,18 +1,17 @@
 //Write a program that checks for a prime number
-
-let a = 1;
-if(a%2==0){
-    console.log("It is a not Prime number")   
+let num = 7;
+let count = 0;
+let i = 2;
+while(i <= num/2){
+   if(num % i == 0){
+       count = count + 1
+       break
+   }
+   i = i + 1
 }
-else if(a%3==0){
-    console.log("It is a not Prime number")
-}
-else if(a%5==0){
-    console.log("It is a not Prime number")
-}
-else if(a==1){
-    console.log("It is a not Prime number")
+if (count == 0){
+   console.log(num + " is a prime number")
 }
 else{
-    console.log("It is a Prime number")
+   console.log(num + " is not a prime number")
 }
