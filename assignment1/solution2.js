@@ -1,5 +1,5 @@
 //Write a program that checks for a prime number
-let num = 7;
+let num = 13;
 let count = 0;
 let i = 2;
 while(i <= num/2){
