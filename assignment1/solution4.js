@@ -1,7 +1,8 @@
 //Write a program  that takes a fruit name and displays a corresponding message based 
 //on the fruit entered. If an invalid fruit name is entered, display "unknown fruit"
 //(using switch case)
-let frt_name = "mango";
+let frt_name = "mango   ";
+
 switch(frt_name){
     case "apple": 
         console.log("An Apple a day keeps doctors away!!!")
@@ -16,7 +17,7 @@ switch(frt_name){
         console.log("Easy to eat")
         break;
     case "orange":
-        console.log("I amd color and a fruit")
+        console.log("I am a color and a fruit")
         break;
     default:
         console.log("Unknown fruit");
