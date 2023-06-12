@@ -14,4 +14,4 @@ shp_cart.pop()
 console.log("after poping = "+shp_cart)
 
 shp_cart.shift()
-console.log("after shifting = "+shp_cart)
+console.log("after shifting = "+shp_cart)   
