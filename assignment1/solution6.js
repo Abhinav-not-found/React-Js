@@ -14,4 +14,7 @@ function remove(){
 function display(){
     console.log(class_)
 }
-
+add()
+display()
+remove()
+display()
