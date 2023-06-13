@@ -10,7 +10,7 @@
 
 let number = [1,2,3,4,5]
 
-let subset = number.slice(0,2)
+let subset = number.slice(1,3)
 console.log("subset = "+ subset)
 
 number.splice(2,1)//removing 3
