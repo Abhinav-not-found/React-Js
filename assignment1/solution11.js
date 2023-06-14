@@ -17,4 +17,11 @@ var resturant = {
 console.log("Menu : "+resturant.menu)
 console.log("after adding samosa = "+resturant.addItem("samosa"))
 console.log("after deleting last item = "+resturant.delItem())
-//
+
+
+
+
+
+
+
+//this terminal is not working sir???
