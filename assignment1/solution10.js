@@ -4,17 +4,18 @@ var bankAccount = {
     accountNumber : 101,
     balance : 5000,
     holderName : "Abhinav",
-    deposite : function(){
-        this.balance+=2000;
+    deposite : function(amt){
+        this.balance+=amt;
         return this.balance;
         
     },
-    withdraw : function(){
-        this.balance-=4000;
+    withdraw : function(amt){
+        this.balance-=amt;
         
         return this.balance;
     }
 }
 console.log("Original balance = " + bankAccount.balance)
-console.log("After depositing 2000 = " +bankAccount.deposite())
-console.log("After withdrawing 4000 = "+bankAccount.withdraw())
+console.log("After depositing = " +bankAccount.deposite(2000))
+console.log("After withdrawing = "+bankAccount.withdraw(6000))
+//
