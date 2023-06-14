@@ -5,12 +5,14 @@ var resturant = {
     name: "South Special Food",
     menu : ["idli", " dosa", " vada"," chutney "],
     rating : [3, 4, 5, 4, 4, 5, 3],
-    addItem : function() {
-        this.menu.push()
+    addItem : function(item) {
+        this.menu.push(item)
         return this.menu;
     },
-    delItem : function(){
-        this.menu.pop()
+
+    delItem : function(item){
+        let a = this.menu.indexOf(item);
+        this.menu.splice(a,1);
         return this.menu;
     },
     avg : function(){
@@ -24,6 +26,6 @@ var resturant = {
 }
 console.log("\nMenu : "+resturant.menu)
 console.log("\nafter adding samosa = "+resturant.addItem("samosa"))
-console.log("after deleting last item = "+resturant.delItem())
+console.log("after deleting item = "+resturant.delItem("idli"))
 console.log("\n\nrating: " + resturant.rating)
 console.log("average rating: "+resturant.avg())
