@@ -35,3 +35,8 @@ console.log(bookList)
         }
        console.log( a.getSummary())
     }
+    function Books(id){
+        this.id=id
+
+    }
+    console.log(Books.prototype)
