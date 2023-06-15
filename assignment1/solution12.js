@@ -26,10 +26,12 @@ bookList.push(book5);
 console.log(bookList)
 
 
-function getSummary(a){
+
     for(let i=0;i<bookList.length;i++){
-        this.a=bookList[i];
+        const a= bookList[i]
+        a.getSummary = function(){
+            `title : ${this.title} author: ${this.author} year: ${this.year}`
+            return '';
+        }
+       console.log( a.getSummary())
     }
-    console.log(a)
-}
-getSummary("book3");
