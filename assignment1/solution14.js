@@ -10,7 +10,7 @@
 //an instance of the Rectangle class and set its nameto "My rectangle". Print the name property of the instance
 
 class Shape{
-    constructor(color,name){
+    constructor(name,color){
         this.name=name
         this.color=color
     }
@@ -22,8 +22,8 @@ class Shape{
     }
 }
 class Circle extends Shape{
-    constructor(radius){
-        super(radius)
+    constructor(radius,name,color){
+        super(name,color)
         this.radius=radius
     }
     get area(){
@@ -31,8 +31,8 @@ class Circle extends Shape{
     }
 }
 class Rectangle extends Shape{
-    constructor(width,height){
-        super(width,height)
+    constructor(width,height,name,color){
+        super(name,color)
         this.width=width
         this.height=height
     }
@@ -40,9 +40,10 @@ class Rectangle extends Shape{
         return this.height*this.width
     }
 }
-let cir1= new Circle(5)
+let cir1= new Circle(5,"circle","red")
 console.log(cir1.area);
-let rec1=new Rectangle(4,6)
+
+let rec1=new Rectangle(4,6,"rectangle","blue")
 console.log(rec1.area);
 rec1.shapeName= "My rectangle"
 console.log(rec1.name)

@@ -15,27 +15,32 @@ class Animal{
         this.sound=sound
     }
     makeSound(){
-        console.log(`${this.name } ${this.sound}`)
+        console.log(`${this.name } is making sound ${this.sound}`)
     }
 }
 class Dog extends Animal{
-    constructor(sound){
+    constructor(sound,name){
         super(sound)
-       
+        
+        this.name="Dog"
+        this.sound="woof";
     }
 }
 class Cat extends Animal{
-    constructor(sound){
+    constructor(sound,name){
         super(sound)
+        
+        this.name="Cat"
+        this.sound="meow"
     }
 }
 
-let dog1 = new Dog("woof")
-// dog1.makeSound()
-let cat1= new Cat("meow")
-// cat1.makeSound()
+let dog1 = new Dog;
+ dog1.makeSound()
+let cat1= new Cat;
+ cat1.makeSound()
 
-let animals=[cat1,dog1]
-for(let i=0;i<animals.length;i++){
-    Animal.makeSound([i])
-}
+ let animals=[cat1,dog1]
+ for(let i=0;i<animals.length;i++){
+     animals[i].makeSound()
+ }
