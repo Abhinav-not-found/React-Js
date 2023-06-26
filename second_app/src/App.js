@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ProductList from './ProductList'
+import ProductList from './Components/Assignment/Solution2/ProductList'
 const products=[
     {
         id:1,
