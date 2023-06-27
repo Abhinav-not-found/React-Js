@@ -10,7 +10,11 @@ export default function ProductList(props) {
     }
   return (
     <div>
-    {displayProducts}
+    {products.map(
+      products=>(
+        <ProductCard key={products.id} id={products.id} name={products.name} desc={products.desc} price={products.price}></ProductCard>
+      )
+    )}
     </div>
   )
 }
