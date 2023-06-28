@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import PlayList from './Components/Solution2/PlayList'
-
-
 const songs=[
   {
     title:"Song 1",
