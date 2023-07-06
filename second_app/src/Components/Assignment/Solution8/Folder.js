@@ -2,58 +2,58 @@
 //Each folder should have a name, and each file should have a name. The application should display the folder structure and allow clicking on a
 //folder to expand its content. When clicking on a file, display an alert with file name.
 import React from 'react';
-
-const folderStructure = [
-  {
-    name: "folder1",
-    file: [
-      { name: "fileA", size: "10kb" },
-      { name: "FileB", size: "20kb" }
-    ]
-  },
-  {
-    name: "folder2",
-    file: [
-      { name: "fileA", size: "100kb" }
-    ]
+class Folder extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expandedFolders: []
+    };
   }
-];
 
-export default class Dropdown extends React.Component {
-  state = {
-    expandedFolders: []
-  };
+  handleClick = (folderName) => {
+    const { expandedFolders } = this.state;
+    const isFolderExpanded = expandedFolders.includes(folderName);
 
-  fileClick = (fileName) => {
-    alert(fileName);
+    if (isFolderExpanded) {
+      this.setState(prevState => ({
+        expandedFolders: prevState.expandedFolders.filter(
+          folder => folder !== folderName
+        )
+      }));
+    } else {
+      this.setState(prevState => ({
+        expandedFolders: [...prevState.expandedFolders, folderName]
+      }));
+    }
   };
 
   render() {
+    const { folder } = this.props;
     const { expandedFolders } = this.state;
 
     return (
       <div>
-        {folderStructure.map(folder => (
-          <div key={folder.name}>
-            <h3 onClick={() => {
-              if (expandedFolders.includes(folder.name)) {
-                this.setState({
-                  expandedFolders: expandedFolders.filter(name => name !== folder.name)
-                });
-              } else {
-                this.setState({
-                  expandedFolders: [...expandedFolders, folder.name]
-                });
-              }
-            }}>{folder.name}</h3>
-            {expandedFolders.includes(folder.name) && folder.file.map(file => (
-              <h1 key={file.name} onClick={() => this.fileClick(file.name)}>
-                {file.name}
-              </h1>
+        <div onClick={() => this.handleClick(folder.name)}>
+          <strong>{folder.name}</strong>
+        </div>
+        {expandedFolders.includes(folder.name) && (
+          <ul style={{ paddingLeft: '20px' }}>
+            {folder.folders.map(subFolder => (
+              <li key={subFolder.name}>
+                <Folder folder={subFolder} />
+              </li>
             ))}
-          </div>
-        ))}
+            {folder.files.map(file => (
+              <li key={file.name}>
+                <div onClick={() => alert(`Clicked on file: ${file.name}`)}>
+                  {file.name}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     );
   }
 }
+export default Folder;

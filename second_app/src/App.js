@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
-import Folder from './Components/Assignment/Solution8/Folder'
-const FileClick=()=>{
-  alert("File1 (2kb)")
-}
-export default class App extends Component {
+import React from 'react'
 
-  render() {
+import MyProvider from "./Components/Assignment/Solution10/MyProvider"
+import ShoppingCart from './Components/Assignment/Solution10/ShoppingCart'
 
-    return (
-      <div>
-      <Folder file="file1" onclick={()=>FileClick}></Folder>
-      </div>
-    )
-  }
+export default function App() {
+  return (
+    
+   <MyProvider>
+      <ShoppingCart></ShoppingCart>
+   </MyProvider>
+    
+  )
 }
